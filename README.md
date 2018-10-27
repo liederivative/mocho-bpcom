@@ -1,1 +1,1 @@
-# mocho-bpcom
+# Mocho Release Channel - BPCom
