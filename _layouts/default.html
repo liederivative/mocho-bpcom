@@ -12,6 +12,17 @@
           width: 24%;   
           margin: 0 auto;
       }
+      .flex{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn{
+        text-decoration: none;
+        padding: 10px;
+        background: white;
+        border-radius: 4px;
+      }
       .awrapper{
             text-align: center;
             display: inline-table;
@@ -30,10 +41,12 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          <div>
+          <div class="flex">
             <div>
               <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
             </div>
+          </div>
+          <div class="flex">
             <div>
             <img src="{{ site.baseurl }}/iconII.ico" alt="">
             </div>
@@ -42,7 +55,7 @@
 
           {% if site.show_downloads %}
             <section id="downloads">
-              <a class="exe_download_link" id="setup-download" href="{{ site.github.zip_url }}">Descarga la última versión</a>
+              <a class="btn" id="setup-download" href="{{ site.github.zip_url }}">Descargar la última versión</a>
               
             </section>
           {% endif %}
