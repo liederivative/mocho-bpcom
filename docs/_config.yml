@@ -1,4 +1,0 @@
-theme: jekyll-theme-slate
-gem "github-pages", group: :jekyll_plugins
-title: Mocho
-show_downloads: true
