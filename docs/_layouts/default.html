@@ -15,17 +15,14 @@
     <!-- HEADER -->
     <div id="header_wrap" class="outer">
         <header class="inner">
-          {% if site.github.is_project_page %}
-            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-          {% endif %}
 
           <h1 id="project_title">{{ site.title | default: site.github.repository_name }}</h1>
           <h2 id="project_tagline">{{ site.description | default: site.github.project_tagline }}</h2>
 
           {% if site.show_downloads %}
             <section id="downloads">
-              <a class="zip_download_link" href="{{ site.github.zip_url }}">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="{{ site.github.tar_url }}">Download this project as a tar.gz file</a>
+              <a class="zip_download_link" id="setup-download" href="{{ site.github.zip_url }}">Descarga la última versión</a>
+              
             </section>
           {% endif %}
         </header>
@@ -44,7 +41,7 @@
         {% if site.github.is_project_page %}
         <p class="copyright">{{ site.title | default: site.github.repository_name }} maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></p>
         {% endif %}
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+        <p>Published with love by Gezeta</p>
       </footer>
     </div>
 <script>
@@ -566,11 +563,11 @@ if (!self.fetch) {
 }
     </script> 
       <script>
-        fetch("https://api.github.com/repos/liederivative/pandam-sym/releases/latest")
+        fetch("https://api.github.com/repos/liederivative/mocho-bpcom/releases/latest")
         .then(function(response) {
           return response.json()
         }).then(function(json) {
-          document.getElementById('win64').href = json.assets[1].browser_download_url;
+          document.getElementById('setup-download').href = json.assets[1].browser_download_url;
         })
         
         
