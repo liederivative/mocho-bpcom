@@ -142,7 +142,9 @@
 
           {% if site.show_downloads %}
             <section id="downloads">
-              <a class="buttonDownload" id="setup-download" href="{{ site.github.zip_url }}">Descargar la última versión</a>
+              <a class="buttonDownload" id="he" href="{{ site.github.zip_url }}">Descargar la última versión (Herrera)</a>
+              <a class="buttonDownload" id="vm" href="{{ site.github.zip_url }}">Descargar la última versión (Villa Mella)</a>
+              <a class="buttonDownload" id="h5" href="{{ site.github.zip_url }}">Descargar la última versión (Duarte)</a>
               
             </section>
           {% endif %}
@@ -684,11 +686,27 @@ if (!self.fetch) {
 }
     </script> 
       <script>
-        fetch("https://api.github.com/repos/liederivative/mocho-bpcom/releases/latest")
+        var urls = ["https://api.github.com/repos/liederivative/mocho-bpcom/releases/latest",
+                    "https://api.github.com/repos/liederivative/mocho-bpcom-vm/releases/latest",
+                    "https://api.github.com/repos/liederivative/mocho-h5/releases/latest"]
+        
+        fetch(urls[0])
         .then(function(response) {
           return response.json()
         }).then(function(json) {
-          document.getElementById('setup-download').href = json.assets[1].browser_download_url;
+          document.getElementById('he').href = json.assets[1].browser_download_url;
+        })
+        fetch(urls[1])
+        .then(function(response) {
+          return response.json()
+        }).then(function(json) {
+          document.getElementById('vm').href = json.assets[1].browser_download_url;
+        })
+        fetch(urls[2])
+        .then(function(response) {
+          return response.json()
+        }).then(function(json) {
+          document.getElementById('h5').href = json.assets[1].browser_download_url;
         })
         
         
