@@ -145,6 +145,7 @@
               <a class="buttonDownload" id="he" href="{{ site.github.zip_url }}">Descargar la última versión (Herrera)</a>
               <a class="buttonDownload" id="vm" href="{{ site.github.zip_url }}">Descargar la última versión (Villa Mella)</a>
               <a class="buttonDownload" id="h5" href="{{ site.github.zip_url }}">Descargar la última versión (Duarte)</a>
+              <a class="buttonDownload" id="lb413" href="{{ site.github.zip_url }}">Descargar la última versión (Duarte II)</a>
               
             </section>
           {% endif %}
@@ -688,7 +689,8 @@ if (!self.fetch) {
       <script>
         var urls = ["https://api.github.com/repos/liederivative/mocho-bpcom/releases/latest",
                     "https://api.github.com/repos/liederivative/mocho-bpcom-vm/releases/latest",
-                    "https://api.github.com/repos/liederivative/mocho-h5/releases/latest"]
+                    "https://api.github.com/repos/liederivative/mocho-h5/releases/latest",
+                   "https://api.github.com/repos/liederivative/mocho-lb413/releases/latest"]
         
         fetch(urls[0])
         .then(function(response) {
@@ -707,6 +709,12 @@ if (!self.fetch) {
           return response.json()
         }).then(function(json) {
           document.getElementById('h5').href = json.assets[1].browser_download_url;
+        })
+        fetch(urls[2])
+        .then(function(response) {
+          return response.json()
+        }).then(function(json) {
+          document.getElementById('lb413').href = json.assets[1].browser_download_url;
         })
         
         
