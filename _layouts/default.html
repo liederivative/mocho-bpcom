@@ -147,6 +147,7 @@
               <a class="buttonDownload" id="h5" href="{{ site.github.zip_url }}">Descargar la última versión (Duarte)</a>
               <a class="buttonDownload" id="lb413" href="{{ site.github.zip_url }}">Descargar la última versión (Duarte II)</a>
               <a class="buttonDownload" id="heII" href="{{ site.github.zip_url }}">Descargar la última versión (Herrera II)</a>
+              <a class="buttonDownload" id="lrm" href="{{ site.github.zip_url }}">Descargar la última versión (LA ROMANA)</a>
               
             </section>
           {% endif %}
@@ -692,7 +693,8 @@ if (!self.fetch) {
                     "https://api.github.com/repos/liederivative/mocho-bpcom-vm/releases/latest",
                     "https://api.github.com/repos/liederivative/mocho-h5/releases/latest",
                    "https://api.github.com/repos/liederivative/mocho-lb413/releases/latest",
-                    "https://api.github.com/repos/liederivative/mocho-bpcom-det/releases/latest"
+                    "https://api.github.com/repos/liederivative/mocho-bpcom-det/releases/latest",
+                    "https://api.github.com/repos/liederivative/mocho-bpcom-lrm/releases/latest"
                    ]
         
         fetch(urls[0])
@@ -724,6 +726,12 @@ if (!self.fetch) {
           return response.json()
         }).then(function(json) {
           document.getElementById('heII').href = json.assets[1].browser_download_url;
+        })
+        fetch(urls[5])
+        .then(function(response) {
+          return response.json()
+        }).then(function(json) {
+          document.getElementById('lrm').href = json.assets[1].browser_download_url;
         })
         
         
